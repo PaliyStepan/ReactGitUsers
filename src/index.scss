@@ -1,0 +1,42 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.profile-ava {
+  width: 150px;
+}
+
+.profile-name {
+  font-size: 20px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.card-link {
+  display: block;
+  transition: all 0.3s ease-out;
+  &:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 0 30px rgba(#00488B,0.4);
+  }
+}
+
+.card-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
