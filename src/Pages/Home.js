@@ -1,11 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import Search from "../components/Search";
 import Card from "../components/Card";
+import {GithubContext} from "../Context/github/githubContext";
 
 const Home = () => {
-    const cards = new Array(15)
-        .fill('')
-        .map((_,i) => i);
+    const {loading, users} = useContext(GithubContext);
 
     return(
         <>
@@ -13,15 +12,15 @@ const Home = () => {
             <Search />
             <div className="row">
                 {
-                    cards.map((card,index)=> {
-                        return(
-                            <div key={index} className="col-sm-4 mb-4">
-                                <Card />
+                    loading
+                    ?  <div className="text-center">Загрузка...</div>
+                     : users.map(user=> (
+                            <div key={user.id} className="col-sm-6 col-md-4 mb-4">
+                                <Card user={user} />
                             </div>
-
-                        )
-                    })
+                        ))
                 }
+
             </div>
         </>
     )
